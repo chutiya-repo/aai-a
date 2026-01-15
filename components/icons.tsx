@@ -1,7 +1,8 @@
 import React from 'react';
+import logo from '../src/assets/images/logo.png';
 
 export const LogoIcon: React.FC<{ className?: string }> = ({ className }) => (
-    <img src="https://cdn1.webspaceai.in/eef565e3-c66a-41ac-9aed-23821bf1e2a8.png" alt="WEBSPACEAI Logo" className={className} />
+    <img src={logo} alt="WEBSPACEAI Logo" className={className} />
 );
 
 export const MenuIcon: React.FC<{ className?: string }> = ({ className }) => (

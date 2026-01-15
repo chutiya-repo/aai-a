@@ -1,23 +1,28 @@
 import React from 'react';
 import { CardData, FooterLinkColumn } from '../types';
+import image1 from '../src/assets/images/image1.png';
+import image2 from '../src/assets/images/image2.png';
+import image3 from '../src/assets/images/image3.png';
+import geminiGenerated from '../src/assets/images/gemini_generated.jpg';
+import image4 from '../src/assets/images/image4.jpeg';
 
 export const heroSlides = [
   {
     title: 'Spring Update',
     description: 'Introducing GPT-4o and making more capabilities available for free in our Product.',
-    imageUrl: 'https://cdn1.webspaceai.in/76e5999d-71c2-40df-911f-90b943b0a3b1.png',
+    imageUrl: image1,
     buttonText: 'Learn more',
   },
   {
     title: 'Explore Our Research',
     description: 'Advancing AI to benefit all of humanity.',
-    imageUrl: 'https://cdn1.webspaceai.in/d9f35bf7-3a1d-424b-b38f-491c2df1a522.png',
+    imageUrl: image2,
     buttonText: 'See publications',
   },
   {
     title: 'AI for Business',
     description: 'Deploy the world\'s most capable models in your own applications.',
-    imageUrl: 'https://cdn1.webspaceai.in/90fe8a4f-afd9-4333-a1a4-ae82d3c8ee9a.png',
+    imageUrl: image3,
     buttonText: 'Discover our APIs',
   },
   {
@@ -32,12 +37,12 @@ export const productCards: CardData[] = [
   {
     category: 'For Everyone',
     title: 'WEBSPACEAI',
-    imageUrl: 'https://cdn1.webspaceai.in/Gemini_Generated_Image_vui5rqvui5rqvui5_znfu0x_c_fill_w_1024_h_1024_jl3cz5.jpg',
+    imageUrl: geminiGenerated,
   },
   {
     category: 'For Everyone',
     title: 'ONE',
-    imageUrl: 'https://cdn1.webspaceai.in/467028089_550858827878595_1920798175618811742_n.jpeg',
+    imageUrl: image4,
   },
 ];
 
