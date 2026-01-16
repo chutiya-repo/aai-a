@@ -34,7 +34,7 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
       <header className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? 'bg-white/80 dark:bg-[#050505]/80 backdrop-blur-xl border-b border-gray-200 dark:border-white/5' : 'bg-transparent'}`}>
         <div className="flex items-center justify-between p-4 md:px-8 lg:px-12 xl:px-24 h-20">
           <div className="flex items-center space-x-4">
-            <a href="#/" aria-label="WEBSPACEAI Homepage" className="hover:opacity-80 transition-opacity">
+            <a href="/" aria-label="WEBSPACEAI Homepage" className="hover:opacity-80 transition-opacity">
               <LogoIcon className="h-8 md:h-9 w-auto invert dark:invert-0" />
             </a>
           </div>
