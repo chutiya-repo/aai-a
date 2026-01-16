@@ -5,7 +5,7 @@ import HomePage from './pages/HomePage';
 import SafetyPage from './pages/SafetyPage';
 
 const App: React.FC = () => {
-  const [currentPath, setCurrentPath] = useState(window.location.hash || '#/');
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
   useEffect(() => {
@@ -18,25 +18,36 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const onLocationChange = () => {
-      setCurrentPath(window.location.hash || '#/');
-      window.scrollTo(0, 0);
+      setCurrentPath(window.location.pathname);
     };
 
-    window.addEventListener('hashchange', onLocationChange);
+    const handleLinkClick = (event: MouseEvent) => {
+        let target = event.target as HTMLElement;
+        const anchor = target.closest('a');
 
-    // Handle initial load if no hash
-    if (!window.location.hash) {
-        window.history.replaceState(null, '', '#/');
-    }
+        // Handle internal navigation for SPA-like experience
+        if (anchor && anchor.target !== '_blank' && anchor.href && anchor.origin === window.location.origin) {
+            const path = anchor.pathname;
+            if(path !== window.location.pathname) {
+                event.preventDefault();
+                window.history.pushState({}, '', path);
+                onLocationChange();
+                window.scrollTo(0, 0); // Scroll to top on page change
+            }
+        }
+    };
+    
+    window.addEventListener('popstate', onLocationChange);
+    document.addEventListener('click', handleLinkClick);
 
     return () => {
-      window.removeEventListener('hashchange', onLocationChange);
+      window.removeEventListener('popstate', onLocationChange);
+      document.removeEventListener('click', handleLinkClick);
     };
   }, []);
 
   const renderPage = () => {
-    const path = currentPath.replace(/^#/, '');
-    switch (path) {
+    switch (currentPath) {
       case '/safety':
         return <SafetyPage />;
       default:
