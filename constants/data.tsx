@@ -118,7 +118,7 @@ export const menuLinks: FooterLinkColumn[] = [
     {
       title: "Safety",
       links: [
-          { text: "Safety Framework", href: "/safety" },
+          { text: "Safety Framework", href: "#/safety" },
           { text: "Safety Standards", href: "#" },
       ],
   }
@@ -164,7 +164,7 @@ export const footerLinks: FooterLinkColumn[] = [
     {
         title: "Safety",
         links: [
-            { text: "Safety Framework", href: "/safety" },
+            { text: "Safety Framework", href: "#/safety" },
             { text: "Safety standards", href: "#" },
         ],
     },
